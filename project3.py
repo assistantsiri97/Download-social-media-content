@@ -2,12 +2,8 @@ import instaloader
 from pytube import YouTube
 def audio_from_youtube(url):
     yt=YouTube(url)
-    so=yt.streams.filter(only_audio=True).first()
-
+    so=yt.streams.filter(resolution="720p",file_extension="mp4").first()
     so.download()
-
-
-
 def instagram():
     insta = instaloader.Instaloader()
     user = input("Enter your instagram username: ")
@@ -27,7 +23,6 @@ else:
 
     video_url = input("Enter youtube url")
     audio_from_youtube(video_url)
-
 
 
 
